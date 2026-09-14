@@ -1,0 +1,12 @@
+[package]
+name = "schematic-supertest-macros"
+version = "0.1.1"
+edition = "2021"
+description = "Attribute macro for Schematic Supertests"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/schematic-tech/supertest-rust"
+rust-version = "1.85"
+publish = ["crates-io"]
+
+[lib]
+proc-macro = true
