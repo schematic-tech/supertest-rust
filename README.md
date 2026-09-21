@@ -4,17 +4,27 @@
 cargo add schematic-supertest
 ```
 
+From the [text-tools example](examples/text-tools):
+
 ```rust
-use schematic::{assume, supertest};
+use schematic::supertest;
+use text_tools::collapse_spaces;
 
 #[supertest]
-fn integer_division_is_bounded(value: i32, divisor: i32) {
-    assume(value >= 0 && divisor > 0);
-    assert!(value / divisor <= value);
+pub fn collapsing_spaces_again_changes_nothing(text: String) {
+    let once = collapse_spaces(&text);
+    let twice = collapse_spaces(&once);
+
+    assert_eq!(twice, once);
 }
 ```
 
-See the [Getting Started Documentation](https://docs.schematic.tech/pup).
+See the [Getting Started Documentation](https://docs.schematic.tech/super).
+
+## Example
+
+Try [text-tools](https://github.com/schematic-tech/supertest-rust/tree/main/examples/text-tools). It includes a supertest
+that finds a space-normalization bug.
 
 ## License
 

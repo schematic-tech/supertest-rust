@@ -25,6 +25,8 @@ jobs:
 
         rustup override set 1.97.1'
     - run: python scripts/package.py
+    - run: cargo fmt --manifest-path examples/text-tools/Cargo.toml -- --check
+    - run: cargo check --manifest-path examples/text-tools/Cargo.toml --tests --locked
     - run: python scripts/release.py assets
     - run: python scripts/release.py verify-assets
     - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
@@ -42,4 +44,5 @@ jobs:
     - run: 'rustup toolchain install 1.85.0 --profile minimal
 
         cargo +1.85.0 test --locked --workspace'
+    - run: cargo +1.85.0 check --manifest-path examples/text-tools/Cargo.toml --tests --locked
     timeout-minutes: 20
