@@ -1,6 +1,6 @@
 [package]
 name = "schematic-supertest"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 description = "Authoring primitives for Schematic Supertests"
 readme = "README.md"
@@ -13,7 +13,7 @@ publish = ["crates-io"]
 name = "schematic"
 
 [dependencies]
-schematic-supertest-macros = { path = "macros", version = "=0.1.1" }
+schematic-supertest-macros = { path = "macros", version = "=0.1.2" }
 
 [workspace]
 members = ["macros"]
